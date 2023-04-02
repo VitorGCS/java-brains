@@ -1,24 +1,31 @@
-package io.javabrains.springbootquickstart.courseapi.topic;
+package io.javabrains.springbootquickstart.lessons;
+
+import io.javabrains.springbootquickstart.course.Course;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Topic {
+public class Lesson {
 
     @Id
     private String id;
     private String name;
     private String description;
 
-    public Topic() {
-    }
+    @ManyToOne
+    private Course course;
 
-    public Topic(String id, String name, String description) {
+    public Lesson() {}
+
+    public Lesson(String id, String name, String description, String courseId) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.course = new Course(courseId, "","","");
     }
+
 
     public String getId() {
         return id;
@@ -42,5 +49,13 @@ public class Topic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+/*    public Course getCourse() {
+        return course;
+    }
+*/
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }

@@ -1,4 +1,4 @@
-package io.javabrains.springbootquickstart.courseapi.topic;
+package io.javabrains.springbootquickstart.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 public class TopicController {
@@ -44,7 +43,7 @@ public class TopicController {
         topicService.addTopic(newTopic);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location", "/topic/" + newTopic.getId());
+        headers.add("Location", "/io/javabrains/springbootquickstart/course/" + newTopic.getIdtop());
         return new ResponseEntity(headers, HttpStatus.CREATED);
     }
 

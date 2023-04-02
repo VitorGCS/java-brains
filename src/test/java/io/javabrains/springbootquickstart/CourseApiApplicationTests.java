@@ -1,4 +1,4 @@
-package io.javabrains.springbootquickstart.courseapi;
+package io.javabrains.springbootquickstart;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
